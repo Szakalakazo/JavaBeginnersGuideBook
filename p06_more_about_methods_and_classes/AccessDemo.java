@@ -18,6 +18,7 @@ public class AccessDemo {
     public static void main(String[] args) {
         MyClass ob = new MyClass();
         ob.setAlpha(99);
-        //ob.beta = 77 won' work!!
+        //ob.beta = 77      //won' work!!
+        ob.gamma = 11;      // will work cuz gamma set to default access modifier
     }
 }
