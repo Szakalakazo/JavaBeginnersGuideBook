@@ -4,6 +4,7 @@ class Shape {
     private double width;
     private double height;
     private String name;
+     String test;
 
     Shape() {
         width = height = 0;
@@ -86,6 +87,7 @@ class BigTriangle extends Shape {
     }
 
     double area() {
+        super.area();
         return (getHeight() * getWidth() / 2);
     }
 
