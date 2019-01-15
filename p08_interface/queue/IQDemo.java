@@ -185,7 +185,5 @@ public class IQDemo {
             ch = iQ.get();
             System.out.println(ch);
         }
-
-
     }
 }
