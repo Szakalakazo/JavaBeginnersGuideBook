@@ -14,9 +14,7 @@ public class ShowFile3 {
             return;
         }
 
-        try {
-            FileInputStream fin = new FileInputStream(path);
-
+        try (FileInputStream fin = new FileInputStream(path)) {
             do {
                 i = fin.read();
                 if (i != -1) System.out.print((char) i);

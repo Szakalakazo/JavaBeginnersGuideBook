@@ -4,9 +4,9 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class CopyFiles2 {
+public class ComparingFiles {
     public static void main(String[] args) {
-        int i = 0;
+        int i = 0, j = 0;
 
         String[] path = {"src/resources/test.txt", "src/resources/copy.txt"};
 
@@ -17,13 +17,16 @@ public class CopyFiles2 {
             }
         }
 
-        try (FileInputStream fin = new FileInputStream(path[0]);
-            FileOutputStream fout = new FileOutputStream(path[1]))
-        {
+        try (FileInputStream f1 = new FileInputStream(path[0]);
+             FileInputStream f2 = new FileInputStream(path[1])) {
             do {
-                i = fin.read();
-                if (i != -1) fout.write(i);
-            } while (i != -1);
+                i = f1.read();
+                j = f2.read();
+                if (i != j) break;
+            } while (i != -1 && j != -1);
+
+            if (i != j) System.out.println("Files are different");
+            else System.out.println("Files are the same");
         } catch (IOException exc) {
             System.out.println("In-Out error occurred: " + exc);
         }
