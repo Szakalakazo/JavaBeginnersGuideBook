@@ -1,7 +1,6 @@
 package p10_in_out;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class ShowFile2 {
@@ -22,8 +21,6 @@ public class ShowFile2 {
                 i = fin.read();
                 if (i != -1) System.out.print((char) i);
             } while (i != -1);
-        } catch (FileNotFoundException exc) {
-            System.out.println("File not found");
         } catch (IOException exc) {
             System.out.println("Error occurred while reading the file");
         } finally {
